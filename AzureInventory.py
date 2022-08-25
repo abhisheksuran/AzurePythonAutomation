@@ -36,7 +36,7 @@ class NestedToSimpleDict:
 		for i, d in enumerate(value):
 			last_name = last_name + str(self.separator) + str(i)
 			self._to_single_dict(d, last_name)
-        return None
+		return None
 
 	def _to_single_dict(self, d,last_key=None):
 		for key, value in d.items():
@@ -65,7 +65,7 @@ class NestedToSimpleDict:
 					self.simple_dict[str(key)] = value
 				else:
 					self.simple_dict[str(last_key) + str(self.separator) + str(key)] = value
-        return None
+		return None
 
 
 class DataCollector:
