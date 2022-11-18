@@ -33,8 +33,7 @@ class FlexiAuto:
     def get_status(self):
         """This function returns the info about the flexiserver"""
 
-        url = f'https://management.azure.com/subscriptions/{self.subscription_id}/resourceGroups/{self.resource_group}\
-        /providers/Microsoft.DBForPostgreSql/flexibleServers/{self.server_name}?api-version=2020-02-14-preview'
+        url = f'https://management.azure.com/subscriptions/{self.subscription_id}/resourceGroups/{self.resource_group}providers/Microsoft.DBForPostgreSql/flexibleServers/{self.server_name}?api-version=2020-02-14-preview'
         try:
             response = requests.get(url, headers=self.AuthHeader)
             res = response.json()
@@ -67,9 +66,7 @@ class FlexiAuto:
         elif self.current_status == expected_state:
             print(f"[+]Trying to {self.action} the Flexi Server {self.server_name}...[+]")
             try:
-                url = f'https://management.azure.com/subscriptions/{self.subscription_id}/resourceGroups/\
-                        {self.resource_group}/providers/Microsoft.DBForPostgreSql/flexibleServers/{self.server_name}/\
-                        {self.action}?api-version=2020-02-14-preview'
+                url = f'https://management.azure.com/subscriptions/{self.subscription_id}/resourceGroups/{self.resource_group}/providers/Microsoft.DBForPostgreSql/flexibleServers/{self.server_name}/{self.action}?api-version=2020-02-14-preview'
 
                 response = requests.post(url, json={}, headers=self.AuthHeader)
             except Exception as e:
