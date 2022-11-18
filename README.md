@@ -7,3 +7,7 @@ excel sheet as an attachment using sendGrid.
 2) AzureInventoryResourceClient.py ---> Same as 1st one but it does not uses Azure resource graph for fetching data. And data retreived by this script is less than the 1st one.
 
 3) TakeSnapShots.py  ---> This takes the snapshot of all the disks attached to a virtual machine i.e os disk and data disk, number of data disks per VM can be multiple.
+
+4) FlexiRunAs.py ---> This Runbook Start/Stop the Postgresql Flexible server and uses RunAs account to authenticate to the azure management api.
+
+5) FlexiMID.py ---> This Runbook Start/Stop the Postgresql Flexible server and uses Managed Identity to authenticate to the azure management api.
